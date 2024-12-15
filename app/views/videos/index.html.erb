@@ -1,0 +1,27 @@
+<h1>Mediabox Queue</h1>
+
+<ul>
+  <% @videos.each do |video| %>
+    <li>
+      <%= video.title %> (<%= video.url %>)
+      <%= button_to 'Play', play_video_path(video), method: :post %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Add a video:</h2>
+<%= form_with model: Video.new do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :url %><br>
+    <%= form.text_field :url %>
+  </div>
+
+  <div>
+    <%= form.submit 'Add' %>
+  </div>
+<% end %>
