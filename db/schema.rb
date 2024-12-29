@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_15_134932) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_29_035422) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -35,6 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_15_134932) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "played"
   end
 
   add_foreign_key "comments", "articles"
